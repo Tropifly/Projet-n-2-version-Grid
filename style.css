@@ -1,0 +1,578 @@
+body
+{
+    width: 100%;
+    height:auto;
+    margin: 0px;
+
+    font-family: 'Raleway', sans-serif;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 320px 626px 495px 220px;
+    grid-template-areas: 
+        "header"
+        "section_1"
+        "section_2"
+        "footer";
+    gap: 30px;
+}
+
+h1, h2, h3, h4, h5, h6, p
+{
+    margin: 0px;
+}
+
+h5
+{
+    font-size: 0.9em;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   header                                   */
+/* -------------------------------------------------------------------------- */
+
+header 
+{
+    width: 100%;
+    height: auto;
+
+    /*grid header*/
+    display: grid;                              
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+        ". logo . . . nav nav ."
+        ". slogan slogan slogan . . . ."
+        ". barre_de_recherche barre_de_recherche . . . . ."
+        ". filtre filtre filtre filtre filtre . ."
+        ". resultat resultat . . . . .";
+    row-gap: 10px;
+}
+
+/* ---------------------------------- logo ---------------------------------- */
+
+.logo
+{
+    grid-area: logo;
+
+    display: grid;
+    align-items: center;
+}
+
+/* ------------------------------- navigation ------------------------------- */
+
+nav
+{
+    grid-area: nav;
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+nav a
+{
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    color: black;
+    font-size: 1.15em;
+}
+
+nav a:last-child
+{
+    color: #0065FC;
+}
+/* --------------------------------- slogan --------------------------------- */
+
+.slogan
+{
+    grid-area: slogan;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slogan h4
+{
+    font-size: 1.5em;
+}
+
+.slogan h6
+{
+    font-size: 1em;
+}
+
+/* --------------------------- barre_de_recherche --------------------------- */
+
+.barre_de_recherche
+{
+    background-color: white;
+
+    grid-area: barre_de_recherche;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.barre_de_recherche div
+{
+    background-color: #f2f2f2;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.barre_de_recherche input
+{
+    width: 250px;
+    height: 25px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.barre_de_recherche button
+{
+    width: 120px;
+    height: 100%;
+    background-color: #0065FC;
+    border: none;
+    border-radius: 0px 15px 15px 0px;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* --------------------------------- filtre --------------------------------- */
+.titre_filtre
+{
+    font-size: 1.5em;
+}
+
+.filtres
+{
+    grid-area: filtre;
+    
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+    align-items: center;
+    
+}
+
+.filtre
+{
+    border: 2px solid #f2f2f2;
+    font-size: 0.9em;
+}
+
+.filtre img
+{
+    background-color: #DEEBFF;
+    padding: 10.5px 10.5px 10.5px 10.5px;
+    border-radius: 100%;
+}
+
+.filtre a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+}
+
+.filtre1 a
+{
+    margin-right: 15px;
+}
+
+.filtre2 a
+{
+    margin-right: 32px;
+}
+
+.filtre3 a
+{
+    margin-right: 20px;
+}
+
+.filtre4 a
+{
+    margin-right: 15px;
+}
+
+.filtre
+{
+    width: 100%;
+    background-color: white;
+    border-radius: 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filtre1
+{
+    grid-column-start: 3;
+    grid-column-end: 10;
+}
+
+.filtre2
+{
+    grid-column-start: 11;
+    grid-column-end: 18;
+}
+
+.filtre3
+{
+    grid-column-start: 19;
+    grid-column-end: 26;
+}
+
+.filtre4
+{
+    grid-column-start: 27;
+    grid-column-end: 36;
+}
+
+/* ----------------------------- texte resultat ----------------------------- */
+
+.resultat
+{
+    grid-area: resultat;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.resultat p
+{
+    margin-left: 10px;
+}
+
+.resultat img
+{
+    border: 1px solid #0065FC;
+    padding: 2px;
+    border-radius: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              tailles des icons                             */
+/* -------------------------------------------------------------------------- */
+
+.barre_de_recherche img
+{
+    width: 30px;
+    height: 30px;
+}
+
+.filtre img
+{
+    width: 35px;
+    height: 35px; 
+}
+
+.resultat img
+{
+    width: 15px;
+    height: 15px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    main                                    */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------- section 1 ------------------------------- */
+main
+{
+    grid-row-start: section_1;
+    grid-row-end: section_2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 626px 495px;
+    grid-template-areas: 
+        "section_1"
+        "section_2";
+}
+
+#section_1
+{
+    grid-area: section_1;
+    /*background-color: aliceblue;*/
+
+    display: grid;                              
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-areas: 
+        ". bg bg bg bg bd bd ."
+        ". bg bg bg bg bd bd ."
+        ". bg bg bg bg bd bd ."
+        ". bg bg bg bg bd bd ."
+        ". bg bg bg bg bd bd ."
+        ". bg bg bg bg bd bd ."
+        ". bg bg bg bg bd bd ."
+        ". bg bg bg bg bd bd ."
+        ". bg bg bg bg bd bd ."
+        ". bg bg bg bg bd bd .";
+    column-gap: 40px;
+}
+
+/*boite de gauche*/
+.boite_gauche
+{
+    grid-area: bg;
+
+    background-color: #f2f2f2;
+    border-radius: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(17, 1fr);
+    grid-template-areas:
+        ". . . . . . . . . . . . . . . ."
+        ". ti ti ti ti ti . . . . . . . . . ."
+        ". . . . . . . . . . . . . . . ."
+        ". art1 art1 art1 art1 . art2 art2 art2 art2 . art3 art3 art3 art3 ."
+        ". art1 art1 art1 art1 . art2 art2 art2 art2 . art3 art3 art3 art3 ."
+        ". art1 art1 art1 art1 . art2 art2 art2 art2 . art3 art3 art3 art3 ."
+        ". art1 art1 art1 art1 . art2 art2 art2 art2 . art3 art3 art3 art3 ."
+        ". art1 art1 art1 art1 . art2 art2 art2 art2 . art3 art3 art3 art3 ."
+        ". . . . . . . . . . . . . . . ."
+        
+        ". art4 art4 art4 art4 . art5 art5 art5 art5 . art6 art6 art6 art6 ."
+        ". art4 art4 art4 art4 . art5 art5 art5 art5 . art6 art6 art6 art6 ."
+        ". art4 art4 art4 art4 . art5 art5 art5 art5 . art6 art6 art6 art6 ."
+        ". art4 art4 art4 art4 . art5 art5 art5 art5 . art6 art6 art6 art6 ."
+        ". art4 art4 art4 art4 . art5 art5 art5 art5 . art6 art6 art6 art6 ."
+        ". . . . . . . . . . . . . . . ."
+        ". aff aff aff aff aff . . . . . . . . . ."
+        ". . . . . . . . . . . . . . . .";
+}
+
+/*paramettres de TOUTE la boite de gauche*/
+.boite_gauche .titre_boite_gauche
+{
+    grid-area: ti;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+/*text "Afficher plus*/
+.boite_gauche .aff_plus 
+{
+    grid-area: aff;
+}
+
+/*reset des style par default des liens*/
+.boite_gauche a 
+{
+    text-decoration: none;
+    color: black;
+}
+
+/*attribution des places aux article*/
+.boite_gauche .art1
+{
+    grid-area: art1;
+}
+
+.boite_gauche .art2
+{
+    grid-area: art2;
+}
+
+.boite_gauche .art3
+{
+    grid-area: art3;
+}
+
+.boite_gauche .art4
+{
+    grid-area: art4;
+}
+
+.boite_gauche .art5
+{
+    grid-area: art5;
+}
+
+.boite_gauche .art6
+{
+    grid-area: art6;
+}
+
+/*paramétrage des articles*/
+.boite_gauche article
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 3px silver;
+}
+
+.boite_gauche h5, p, .note
+{
+    margin-left: 15px;
+}
+
+/*taille des etoiles (ne pas changer)*/
+.boite_gauche .note
+{
+    width: 75px;
+    height: 15px;
+}
+
+.boite_gauche picture
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+/*parametrage des img dans les picrures*/
+.boite_gauche picture img
+{
+    width: 95%;
+    height: 120px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+/*boite de droite*/
+.boite_droite
+{
+    grid-area: bd;
+
+    background-color: #f2f2f2;
+    border-radius: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-areas: 
+        ". . . . . . . ."  
+        ". ti ti ti ti . i ."
+        ". . . . . . . ."
+        ". art1 art1 art1 art1 art1 art1 ."
+        ". art1 art1 art1 art1 art1 art1 ."
+        ". art1 art1 art1 art1 art1 art1 ."
+        ". art1 art1 art1 art1 art1 art1 ."
+        ". . . . . . . ."
+        ". art2 art2 art2 art2 art2 art2 ."
+        ". art2 art2 art2 art2 art2 art2 ."
+        ". art2 art2 art2 art2 art2 art2 ."
+        ". art2 art2 art2 art2 art2 art2 ."
+        ". . . . . . . ."
+        ". art3 art3 art3 art3 art3 art3 ."
+        ". art3 art3 art3 art3 art3 art3 ."
+        ". art3 art3 art3 art3 art3 art3 ."
+        ". art3 art3 art3 art3 art3 art3 ."
+        ". . . . . . . .";
+        
+}
+
+.boite_droite h3
+{
+    grid-area: ti;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.boite_droite i
+{
+    grid-area: i;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.boite_droite a 
+{
+    text-decoration: none;
+    color: black;
+}
+
+.boite_droite .text, .note_d
+{
+    margin-left: 0px;
+}
+
+.boite_droite .art1
+{
+    grid-area: art1;
+}
+
+.boite_droite .art2
+{
+    grid-area: art2;
+}
+
+
+.boite_droite .art3
+{
+    grid-area: art3;
+}
+
+
+/*paramétrage des articles*/
+.boite_droite article
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 3px silver;
+}
+
+.boite_droite picture
+{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-left: 4px; 
+}
+
+/*parametrage des img dans les picrures*/
+.boite_droite picture img
+{
+    width: 100%;
+    height: 130px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.boite_droite div
+{
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+}
+
+.boite_droite .note_d
+{
+    width: 75px;
+    height: 15px;
+}
