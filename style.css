@@ -27,6 +27,11 @@ h5
     font-size: 0.9em;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                   header                                   */
 /* -------------------------------------------------------------------------- */
@@ -304,6 +309,7 @@ main
     grid-template-areas: 
         "section_1"
         "section_2";
+    row-gap: 30px;
 }
 
 #section_1
@@ -556,7 +562,30 @@ main
     margin-left: 4px; 
 }
 
-/*parametrage des img dans les picrures*/
+.boite_droite div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.boite_droite .art1 div
+{
+    margin-right: 25px;
+}
+
+.boite_droite .art2 div
+{
+    width: 50%;
+    margin-right: 8px;
+}
+
+.boite_droite .art3 div
+{
+    width: 50%;
+    margin-right: 8px;
+}
+
+/*parametrage des img dans les pictures*/
 .boite_droite picture img
 {
     width: 100%;
@@ -564,15 +593,231 @@ main
     border-radius: 20px 0px 0px 20px;
 }
 
-.boite_droite div
-{
-    display: flex;
-    flex-direction: column;
-    margin-right: 25px;
-}
-
 .boite_droite .note_d
 {
     width: 75px;
     height: 15px;
+}
+
+/*section 2*/
+#section_2
+{
+    grid-area: section_2;
+    /*background-color: aliceblue;*/
+
+    display: grid;                              
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-areas: 
+        ". . titre titre titre . . . . . . . . . . ."
+        ". . b1 b1 b1 b2 b2 b2 b4 b4 b4 b5 b5 b5 . ."
+        ". . b1 b1 b1 b2 b2 b2 b4 b4 b4 b5 b5 b5 . ."
+        ". . b1 b1 b1 b2 b2 b2 b4 b4 b4 b5 b5 b5 . ."
+        ". . b1 b1 b1 b2 b2 b2 b4 b4 b4 b5 b5 b5 . ."
+        ". . b1 b1 b1 b2 b2 b2 b4 b4 b4 b6 b6 b6 . ."
+        ". . b1 b1 b1 b3 b3 b3 b4 b4 b4 b6 b6 b6 . ."
+        ". . b1 b1 b1 b3 b3 b3 b4 b4 b4 b6 b6 b6 . ."
+        ". . b1 b1 b1 b3 b3 b3 b4 b4 b4 b6 b6 b6 . ."
+        ". . b1 b1 b1 b3 b3 b3 b4 b4 b4 b6 b6 b6 . .";
+    column-gap: 40px;
+    row-gap: 20px;
+}
+
+.titre_section2
+{
+    grid-area: titre;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#section_2 article
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 3px 5px #f2f2f2;
+}
+
+/*reglage titre des images*/
+#section_2 picture img
+{
+    width: 100%;
+    height: 89%;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+
+#section_2 .b2 picture img
+{
+    height: 80%;
+}
+
+#section_2 .b3 picture img
+{
+    height: 75%;
+}
+
+#section_2 .b5 picture img
+{
+    height: 75%;
+}
+
+#section_2 .b6 picture img
+{
+    height: 80%;
+}
+
+#section_2 article h5
+{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.b1
+{
+    grid-area: b1;
+}
+
+.b2
+{
+    grid-area: b2;
+}
+
+.b3
+{
+    grid-area: b3;
+}
+
+.b4
+{
+    grid-area: b4;
+}
+.b5
+{
+    grid-area: b5;
+}
+
+.b6
+{
+    grid-area: b6;
+}
+
+/*footer*/
+footer
+{
+    grid-area: footer;
+
+    display: grid;                              
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+        ". . block1 block1 . block2 block2 . block3 block3 . . . . . ."
+        ". . block1 block1 . block2 block2 . block3 block3 . . . . . ."
+        ". . block1 block1 . block2 block2 . block3 block3 . . . . . ."
+        ". . block1 block1 . block2 block2 . block3 block3 . . . . . .";      
+    column-gap: 40px;
+    row-gap: 20px;
+
+    background-color: #f2f2f2;
+}
+
+.block1
+{
+    grid-area: block1;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: 
+        "."
+        "."
+        "titre_footer"
+        "ligne1"
+        "ligne2"
+        "ligne3"
+        "."
+        ".";
+}
+
+.block1 .titre_footer
+{
+    grid-area: titre_footer;
+}
+
+.block1 .ligne1
+{
+    grid-area: ligne1;
+}
+
+.block1 .ligne2
+{
+    grid-area: ligne2;
+}
+
+.block1 .ligne3
+{
+    grid-area: ligne3;
+}
+
+.block2
+{
+    grid-area: block2;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: 
+        "."
+        "."
+        "titre_footer"
+        "ligne1"
+        "ligne2"
+        "ligne3"
+        "."
+        ".";
+}
+
+.block2 .titre_footer
+{
+    grid-area: titre_footer;
+}
+
+.block2 .ligne1
+{
+    grid-area: ligne1;
+}
+
+.block2 .ligne2
+{
+    grid-area: ligne2;
+}
+
+.block3
+{
+    grid-area: block3;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: 
+        "."
+        "."
+        "titre_footer"
+        "ligne1"
+        "ligne2"
+        "ligne3"
+        "."
+        ".";
+}
+
+.block3 .titre_footer
+{
+    grid-area: titre_footer;
+}
+
+.block3 .ligne1
+{
+    grid-area: ligne1;
+}
+
+.block3 .ligne2
+{
+    grid-area: ligne2;
 }
